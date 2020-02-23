@@ -4,6 +4,7 @@
       "region": "us-east-1",
       "instance_type": "t2.micro",
       "ssh_username": "ec2-user",
+      "ssh_keypair_name": "mac",
       "source_ami": "ami-0a887e401f7654935",
       "ami_name": "updated-jenkins-ami {{timestamp}}"
     }],
@@ -19,14 +20,15 @@
                 "sudo systemctl enable jenkins"
             ]
         },
-        {
-            "type": "breakpoint",
-            "note": "Something"
-        },
+        
         {
             "type": "file",
             "source": "test_file",
             "destination": "/tmp/test_file"
-          }
+          },
+          {
+            "type": "breakpoint",
+            "note": "Something"
+        }
     ]
   }
